@@ -1,4 +1,5 @@
 import { BlogPosts } from "app/components/posts";
+import Image from "next/image";
 
 export default function Page() {
   return (
@@ -27,6 +28,12 @@ export default function Page() {
         passions are helping people and solving problems through the use of
         innovative technology.
       </p>
+      <Image
+        src="/images/david.png"
+        alt="An example image"
+        width={600}
+        height={600}
+      />
       <br></br>
     </section>
   );
