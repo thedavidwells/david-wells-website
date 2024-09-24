@@ -28,12 +28,13 @@ export default function Page() {
         passions are helping people and solving problems through the use of
         innovative technology.
       </p>
-      <Image
+      {/* <Image
         src="/images/david.png"
         alt="An example image"
         width={600}
         height={600}
-      />
+        priority
+      /> */}
       <br></br>
     </section>
   );
