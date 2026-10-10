@@ -7,6 +7,7 @@ export default function Page() {
       <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
         david wells
       </h1>
+      <br></br>
       <p className="prose">
         I'm a 10-year software development veteran turned sales professional. I
         work at{" "}
@@ -28,13 +29,7 @@ export default function Page() {
         passions are helping people and solving problems through the use of
         innovative technology.
       </p>
-      {/* <Image
-        src="/images/david.png"
-        alt="An example image"
-        width={600}
-        height={600}
-        priority
-      /> */}
+
       <br></br>
     </section>
   );
