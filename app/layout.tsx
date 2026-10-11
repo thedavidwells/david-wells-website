@@ -1,6 +1,7 @@
 import "./global.css";
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
+import { Instrument_Serif } from "next/font/google";
 import { GeistMono } from "geist/font/mono";
 import { Navbar } from "./components/nav";
 import { Analytics } from "@vercel/analytics/react";
@@ -12,14 +13,16 @@ export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
     default: "David Wells",
-    template: "%s | Personal Blog",
+    template: "%s | David Wells",
   },
-  description: "This is my personal blog.",
+  description:
+    "David Wells: software engineer turned sales professional. Work history, writing, and links.",
   openGraph: {
     title: "David Wells",
-    description: "This is my persoal blog.",
+    description:
+      "David Wells: software engineer turned sales professional.",
     url: baseUrl,
-    siteName: "The David Wells",
+    siteName: "David Wells",
     locale: "en_US",
     type: "website",
   },
@@ -36,6 +39,13 @@ export const metadata: Metadata = {
   },
 };
 
+const serif = Instrument_Serif({
+  weight: "400",
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+  variable: "--font-serif",
+});
+
 const cx = (...classes) => classes.filter(Boolean).join(" ");
 
 export default function RootLayout({
@@ -47,13 +57,13 @@ export default function RootLayout({
     <html
       lang="en"
       className={cx(
-        "text-black bg-white dark:text-white dark:bg-black",
         GeistSans.variable,
+        serif.variable,
         GeistMono.variable
       )}
     >
-      <body className="antialiased max-w-xl mx-4 mt-8 lg:mx-auto">
-        <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
+      <body className="antialiased max-w-5xl mx-auto px-4 md:px-8 mt-6">
+        <main className="flex-auto min-w-0 flex flex-col">
           <Navbar />
           {children}
           <Footer />

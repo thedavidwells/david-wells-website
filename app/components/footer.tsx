@@ -1,72 +1,23 @@
-function ArrowIcon() {
-  return (
-    <svg
-      width="12"
-      height="12"
-      viewBox="0 0 12 12"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M2.07102 11.3494L0.963068 10.2415L9.2017 1.98864H2.83807L2.85227 0.454545H11.8438V9.46023H10.2955L10.3097 3.09659L2.07102 11.3494Z"
-        fill="currentColor"
-      />
-    </svg>
-  );
-}
+import { socialLinks } from "./links";
 
 export default function Footer() {
   return (
-    <footer className="mb-16">
-      <ul className="font-sm mt-8 flex flex-col space-x-0 space-y-2 text-neutral-600 md:flex-row md:space-x-4 md:space-y-0 dark:text-neutral-300">
-        <li>
-          <a
-            className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
-            rel="noopener noreferrer"
-            target="_blank"
-            href="https://www.linkedin.com/in/thedavidwells/"
-          >
-            <ArrowIcon />
-            <p className="ml-2 h-7">linkedin</p>
-          </a>
-        </li>
-        <li>
-          <a
-            className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
-            rel="noopener noreferrer"
-            target="_blank"
-            href="https://github.com/thedavidwells"
-          >
-            <ArrowIcon />
-            <p className="ml-2 h-7">github</p>
-          </a>
-        </li>
-        <li>
-          <a
-            className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
-            rel="noopener noreferrer"
-            target="_blank"
-            href="https://instagram.com/thedavidwells"
-          >
-            <ArrowIcon />
-            <p className="ml-2 h-7">IG</p>
-          </a>
-        </li>
-        <li>
-          <a
-            className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
-            rel="noopener noreferrer"
-            target="_blank"
-            href="https://x.com/thedavidwells"
-          >
-            <ArrowIcon />
-            <p className="ml-2 h-7">X</p>
-          </a>
-        </li>
+    <footer className="mono-label mt-20 mb-12 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+      <ul className="flex flex-wrap gap-x-5 gap-y-2">
+        {socialLinks.map(({ name, href }) => (
+          <li key={name}>
+            <a
+              className="hover:underline underline-offset-4"
+              rel="noopener noreferrer"
+              target="_blank"
+              href={href}
+            >
+              ▸ {name}
+            </a>
+          </li>
+        ))}
       </ul>
-      <p className="mt-8 text-neutral-600 dark:text-neutral-300">
-        © {new Date().getFullYear()} MIT Licensed
-      </p>
+      <p className="text-muted">© {new Date().getFullYear()} David Wells</p>
     </footer>
   );
 }
